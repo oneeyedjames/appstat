@@ -1,0 +1,105 @@
+@import '_colors';
+@import '_dimens';
+
+table.report-dates {
+	float: left;
+	border-spacing: 0px;
+
+	th, td { padding: 3px $text_radius; }
+
+	thead {
+		th { background-color: $gray; color: $white; }
+	}
+
+	tbody {
+		td {
+			border-color: $gray;
+			border-style: solid;
+			border-width: 0px;
+			text-align: right;
+		}
+
+		tr:nth-child(even) td { background-color: $light_gray; }
+		tr:last-child td { border-width: 0px 0px $border_width 0px; }
+	}
+}
+
+table.report {
+	border-spacing: 0px;
+
+	th, td { padding: 3px $text_radius; }
+
+	thead {
+		th { color: $white; }
+
+		tr:first-child {
+			th:nth-child(1) { background-color: $blue;   }
+			th:nth-child(2) { background-color: $red;    }
+			th:nth-child(3) { background-color: $yellow; }
+			th:nth-child(4) { background-color: $green;  }
+			th:nth-child(5) { background-color: $purple; }
+		}
+	}
+
+	tbody {
+		td { border-style: solid; border-width: 0px; text-align: right; }
+
+		tr:last-child td { border-width: 0px 0px $border_width 0px; }
+	}
+
+	&.itc {
+		thead {
+			tr:nth-child(2) {
+				th:nth-child(1), th:nth-child(2)  { background-color: $blue;   }
+				th:nth-child(3), th:nth-child(4)  { background-color: $red;    }
+				th:nth-child(5), th:nth-child(6)  { background-color: $yellow; }
+				th:nth-child(7), th:nth-child(8)  { background-color: $green;  }
+				th:nth-child(9), th:nth-child(10) { background-color: $purple; }
+			}
+		}
+
+		tbody {
+			td:nth-child(1), td:nth-child(2)  { border-color: $blue;   }
+			td:nth-child(3), td:nth-child(4)  { border-color: $red;    }
+			td:nth-child(5), td:nth-child(6)  { border-color: $yellow; }
+			td:nth-child(7), td:nth-child(8)  { border-color: $green;  }
+			td:nth-child(9), td:nth-child(10) { border-color: $purple; }
+
+			tr:nth-child(even) {
+				td:nth-child(1), td:nth-child(2)  { background-color: $light_blue;   }
+				td:nth-child(3), td:nth-child(4)  { background-color: $light_red;    }
+				td:nth-child(5), td:nth-child(6)  { background-color: $light_yellow; }
+				td:nth-child(7), td:nth-child(8)  { background-color: $light_green;  }
+				td:nth-child(9), td:nth-child(10) { background-color: $light_purple; }
+			}
+		}
+	}
+
+	&.play {
+		thead {
+			tr:nth-child(2) {
+				th:nth-child(1),  th:nth-child(2),  th:nth-child(3)  { background-color: $blue;   }
+				th:nth-child(4),  th:nth-child(5),  th:nth-child(6)  { background-color: $red;    }
+				th:nth-child(7),  th:nth-child(8),  th:nth-child(9)  { background-color: $yellow; }
+				th:nth-child(10), th:nth-child(11), th:nth-child(12) { background-color: $green;  }
+				th:nth-child(13), th:nth-child(10), th:nth-child(16) { background-color: $purple; }
+			}
+		}
+
+		tbody {
+			td:nth-child(1),  td:nth-child(2),  td:nth-child(3)  { border-color: $blue;   }
+			td:nth-child(4),  td:nth-child(5),  td:nth-child(6)  { border-color: $red;    }
+			td:nth-child(7),  td:nth-child(8),  td:nth-child(9)  { border-color: $yellow; }
+			td:nth-child(10), td:nth-child(11), td:nth-child(12) { border-color: $green;  }
+			td:nth-child(13), td:nth-child(14), td:nth-child(15) { border-color: $purple; }
+
+			tr:nth-child(even) {
+				td:nth-child(1),  td:nth-child(2),  td:nth-child(3)  { background-color: $light_blue;   }
+				td:nth-child(4),  td:nth-child(5),  td:nth-child(6)  { background-color: $light_red;    }
+				td:nth-child(7),  td:nth-child(8),  td:nth-child(9)  { background-color: $light_yellow; }
+				td:nth-child(10), td:nth-child(11), td:nth-child(12) { background-color: $light_green;  }
+				td:nth-child(13), td:nth-child(14), td:nth-child(15) { background-color: $light_purple; }
+			}
+		}
+	}
+}

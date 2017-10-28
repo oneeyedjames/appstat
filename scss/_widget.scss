@@ -1,0 +1,20 @@
+@import '_colors';
+@import '_dimens';
+
+@mixin button {
+	display: inline-block;
+	margin: 0px;
+	padding: 0px $text_radius;
+	border: none;
+	border-radius: $text_radius;
+	background-color: $yellow;
+	color: $white;
+	font-size: 14px;
+	font-weight: normal;
+	text-decoration: none;
+	line-height: $line_height;
+
+	&:hover    { background-color: $orange; }
+	&.active   { background-color: $red;    }
+	&.disabled { background-color: $gray;   }
+}

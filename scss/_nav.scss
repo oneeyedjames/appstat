@@ -1,0 +1,49 @@
+@import '_colors';
+@import '_dimens';
+@import '_widget';
+
+nav.buttons, nav.tabs, nav.pill, nav.list {
+	h3 {
+		display: inline-block;
+		margin: 0px;
+		padding: 0px $text_radius;
+		line-height: $line_height;
+		font-size: 15px;
+	}
+
+	a { @include button; }
+}
+
+nav.tabs {
+	border-bottom: $border_width solid $red;
+
+	a { border-radius: $text_radius $text_radius 0px 0px; }
+}
+
+nav.pill {
+	display: inline-block;
+	font-size: 0px;
+
+	a {
+		border-radius: 0px;
+
+		&:first-of-type { border-radius: $text_radius 0px 0px $text_radius; }
+		&:last-of-type  { border-radius: 0px $text_radius $text_radius 0px; }
+	}
+}
+
+nav.list {
+	padding: $text_radius 0px;
+	border-radius: $text_radius;
+	background-color: $yellow;
+
+	//h3 { display: block; margin: $text_radius ($text_radius + $border_width); }
+
+	a { @include button; display: block; }
+}
+
+.panel {
+	display: none;
+
+	&.active { display: block; }
+}

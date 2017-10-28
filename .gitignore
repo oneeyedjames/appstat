@@ -1,0 +1,8 @@
+config.php
+
+installs_*
+
+itc/*
+reports/*
+
+scss/.sass-cache/*
