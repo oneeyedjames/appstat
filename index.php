@@ -6,19 +6,28 @@ require_once 'includes/functions.php';
 import('functions');
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-	foreach (@$_FILES['report']['tmp_name'] as $index => $tmp_name) {
-		$name = $_FILES['report']['name'][$index];
+	if (isset($_FILES['report'])) {
+		foreach (@$_FILES['report']['tmp_name'] as $index => $tmp_name) {
+			$name = $_FILES['report']['name'][$index];
 
-		if ($report = read_report($tmp_name, $name))
-			import_report($report);
+			if ($report = read_report($tmp_name, $name))
+				import_report($report);
 
-		if (is_file($tmp_name))
-			move_uploaded_file($tmp_name, 'reports/' . SOURCE . "/$name" );
+			if (is_file($tmp_name))
+				move_uploaded_file($tmp_name, 'reports/' . SOURCE . "/$name" );
+		}
+
+		header('Location: ' . $_SERVER['REQUEST_URI']);
+
+		exit;
+	} elseif (isset($_FILES['country_report']) && SOURCE == 'play') {
+		if ($report = read_country_report($_FILES['country_report']['tmp_name']))
+			import_country_report($report);
+
+		header('Location: ' . $_SERVER['REQUEST_URI']);
+
+		exit;
 	}
-
-	header('Location: ' . $_SERVER['REQUEST_URI']);
-
-	exit;
 }
 
 list($year, $month) = get_request_date();

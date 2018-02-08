@@ -3,16 +3,16 @@
 html, body { height: 100%; margin: 0px; color: #333333; font-family: Helvetica, sans-serif; font-size: 16px; }
 
 header#page-header { overflow: hidden; position: absolute; z-index: 100; top: 0px; left: 0px; right: 0px; }
-header#page-header hgroup { overflow: hidden; width: 100%; padding: 12px 24px; box-sizing: border-box; background-color: #3366cc; color: white; }
-header#page-header hgroup h1 { float: left; margin: 0px; color: white; line-height: 40px; }
-header#page-header hgroup h1 a { color: white; text-decoration: none; }
-header#page-header hgroup #page-logo { float: left; width: 40px; height: 40px; margin-right: 12px; box-sizing: border-box; background-color: #dc3912; border-radius: 20px; font-size: 24px; line-height: 40px; text-align: center; }
+header#page-header hgroup { overflow: hidden; width: 100%; padding: 12px 24px; box-sizing: border-box; background-color: #3366CC; color: #FFFFFF; }
+header#page-header hgroup h1 { float: left; margin: 0px; color: #FFFFFF; line-height: 40px; }
+header#page-header hgroup h1 a { color: #FFFFFF; text-decoration: none; }
+header#page-header hgroup #page-logo { float: left; width: 40px; height: 40px; margin-right: 12px; box-sizing: border-box; background-color: #DC3912; border-radius: 20px; font-size: 24px; line-height: 40px; text-align: center; }
 header#page-header hgroup form { float: right; padding: 8px 0px; }
 header#page-header hgroup form label { font-weight: bold; }
-header#page-header hgroup form input[type="text"], header#page-header hgroup form input[type="file"], header#page-header hgroup form textarea { background-color: white; color: #333333; font-size: 14px; line-height: 24px; }
-header#page-header hgroup form input[type="button"], header#page-header hgroup form input[type="submit"] { display: inline-block; margin: 0px; padding: 0px 12px; border: none; border-radius: 12px; background-color: #ff9900; color: white; font-size: 14px; font-weight: normal; text-decoration: none; line-height: 24px; }
-header#page-header hgroup form input[type="button"]:hover, header#page-header hgroup form input[type="submit"]:hover { background-color: #ff6600; }
-header#page-header hgroup form input[type="button"].active, header#page-header hgroup form input[type="submit"].active { background-color: #dc3912; }
+header#page-header hgroup form input[type="text"], header#page-header hgroup form input[type="file"], header#page-header hgroup form textarea { background-color: #FFFFFF; color: #333333; font-size: 14px; line-height: 24px; }
+header#page-header hgroup form input[type="button"], header#page-header hgroup form input[type="submit"] { display: inline-block; margin: 0px; padding: 0px 12px; border: none; border-radius: 12px; background-color: #FF9900; color: #FFFFFF; font-size: 14px; font-weight: normal; text-decoration: none; line-height: 24px; }
+header#page-header hgroup form input[type="button"]:hover, header#page-header hgroup form input[type="submit"]:hover { background-color: #FF6600; }
+header#page-header hgroup form input[type="button"].active, header#page-header hgroup form input[type="submit"].active { background-color: #DC3912; }
 header#page-header hgroup form input[type="button"].disabled, header#page-header hgroup form input[type="submit"].disabled { background-color: #999999; }
 
 div#page-wrapper { position: relative; padding: 64px 0 0 0; min-height: 100%; box-sizing: border-box; }
@@ -20,16 +20,24 @@ div#page-wrapper { position: relative; padding: 64px 0 0 0; min-height: 100%; bo
 article#content { padding: 24px; margin-left: 300px; min-height: 100%; box-sizing: border-box; }
 article#content nav#view-tabs { padding: 0px 12px; margin: 12px 0px; }
 
-aside#sidebar { position: absolute; top: 64px; width: 300px; box-sizing: border-box; background-color: white; padding-left: 24px; }
+aside#sidebar { position: absolute; top: 64px; width: 300px; box-sizing: border-box; background-color: #FFFFFF; padding-left: 24px; }
 aside#sidebar h3 { padding: 12px; }
 
+form#country-form { margin: -12px 0 12px; padding: 12px; background-color: #3366CC; }
+form#country-form label { font-weight: bold; color: #FFFFFF; }
+form#country-form input[type="text"], form#country-form input[type="file"], form#country-form textarea { background-color: #FFFFFF; color: #333333; font-size: 14px; line-height: 24px; }
+form#country-form input[type="button"], form#country-form input[type="submit"] { display: inline-block; margin: 0px; padding: 0px 12px; border: none; border-radius: 12px; background-color: #FF9900; color: #FFFFFF; font-size: 14px; font-weight: normal; text-decoration: none; line-height: 24px; }
+form#country-form input[type="button"]:hover, form#country-form input[type="submit"]:hover { background-color: #FF6600; }
+form#country-form input[type="button"].active, form#country-form input[type="submit"].active { background-color: #DC3912; }
+form#country-form input[type="button"].disabled, form#country-form input[type="submit"].disabled { background-color: #999999; }
+
 nav.buttons h3, nav.tabs h3, nav.pill h3, nav.list h3 { display: inline-block; margin: 0px; padding: 0px 12px; line-height: 24px; font-size: 15px; }
-nav.buttons a, nav.tabs a, nav.pill a, nav.list a { display: inline-block; margin: 0px; padding: 0px 12px; border: none; border-radius: 12px; background-color: #ff9900; color: white; font-size: 14px; font-weight: normal; text-decoration: none; line-height: 24px; }
-nav.buttons a:hover, nav.tabs a:hover, nav.pill a:hover, nav.list a:hover { background-color: #ff6600; }
-nav.buttons a.active, nav.tabs a.active, nav.pill a.active, nav.list a.active { background-color: #dc3912; }
+nav.buttons a, nav.tabs a, nav.pill a, nav.list a { display: inline-block; margin: 0px; padding: 0px 12px; border: none; border-radius: 12px; background-color: #FF9900; color: #FFFFFF; font-size: 14px; font-weight: normal; text-decoration: none; line-height: 24px; }
+nav.buttons a:hover, nav.tabs a:hover, nav.pill a:hover, nav.list a:hover { background-color: #FF6600; }
+nav.buttons a.active, nav.tabs a.active, nav.pill a.active, nav.list a.active { background-color: #DC3912; }
 nav.buttons a.disabled, nav.tabs a.disabled, nav.pill a.disabled, nav.list a.disabled { background-color: #999999; }
 
-nav.tabs { border-bottom: 6px solid #dc3912; }
+nav.tabs { border-bottom: 6px solid #DC3912; }
 nav.tabs a { border-radius: 12px 12px 0px 0px; }
 
 nav.pill { display: inline-block; font-size: 0px; }
@@ -37,10 +45,10 @@ nav.pill a { border-radius: 0px; }
 nav.pill a:first-of-type { border-radius: 12px 0px 0px 12px; }
 nav.pill a:last-of-type { border-radius: 0px 12px 12px 0px; }
 
-nav.list { padding: 12px 0px; border-radius: 12px; background-color: #ff9900; }
-nav.list a { display: inline-block; margin: 0px; padding: 0px 12px; border: none; border-radius: 12px; background-color: #ff9900; color: white; font-size: 14px; font-weight: normal; text-decoration: none; line-height: 24px; display: block; }
-nav.list a:hover { background-color: #ff6600; }
-nav.list a.active { background-color: #dc3912; }
+nav.list { padding: 12px 0px; border-radius: 12px; background-color: #FF9900; }
+nav.list a { display: inline-block; margin: 0px; padding: 0px 12px; border: none; border-radius: 12px; background-color: #FF9900; color: #FFFFFF; font-size: 14px; font-weight: normal; text-decoration: none; line-height: 24px; display: block; }
+nav.list a:hover { background-color: #FF6600; }
+nav.list a.active { background-color: #DC3912; }
 nav.list a.disabled { background-color: #999999; }
 
 .panel { display: none; }
@@ -48,48 +56,50 @@ nav.list a.disabled { background-color: #999999; }
 
 table.report-dates { float: left; border-spacing: 0px; }
 table.report-dates th, table.report-dates td { padding: 3px 12px; }
-table.report-dates thead th { background-color: #999999; color: white; }
+table.report-dates thead th { background-color: #999999; color: #FFFFFF; }
 table.report-dates tbody td { border-color: #999999; border-style: solid; border-width: 0px; text-align: right; }
-table.report-dates tbody tr:nth-child(even) td { background-color: #cccccc; }
+table.report-dates tbody tr:nth-child(even) td { background-color: #CCCCCC; }
 table.report-dates tbody tr:last-child td { border-width: 0px 0px 6px 0px; }
 
 table.report { border-spacing: 0px; }
 table.report th, table.report td { padding: 3px 12px; }
-table.report thead th { color: white; }
-table.report thead tr:first-child th:nth-child(1) { background-color: #3366cc; }
-table.report thead tr:first-child th:nth-child(2) { background-color: #dc3912; }
-table.report thead tr:first-child th:nth-child(3) { background-color: #ff9900; }
+table.report thead th { color: #FFFFFF; }
+table.report thead tr:first-child th:nth-child(1) { background-color: #3366CC; }
+table.report thead tr:first-child th:nth-child(2) { background-color: #DC3912; }
+table.report thead tr:first-child th:nth-child(3) { background-color: #FF9900; }
 table.report thead tr:first-child th:nth-child(4) { background-color: #109618; }
 table.report thead tr:first-child th:nth-child(5) { background-color: #990099; }
 table.report tbody td { border-style: solid; border-width: 0px; text-align: right; }
 table.report tbody tr:last-child td { border-width: 0px 0px 6px 0px; }
-table.report.itc thead tr:nth-child(2) th:nth-child(1), table.report.itc thead tr:nth-child(2) th:nth-child(2) { background-color: #3366cc; }
-table.report.itc thead tr:nth-child(2) th:nth-child(3), table.report.itc thead tr:nth-child(2) th:nth-child(4) { background-color: #dc3912; }
-table.report.itc thead tr:nth-child(2) th:nth-child(5), table.report.itc thead tr:nth-child(2) th:nth-child(6) { background-color: #ff9900; }
+table.report.itc thead tr:nth-child(2) th:nth-child(1), table.report.itc thead tr:nth-child(2) th:nth-child(2) { background-color: #3366CC; }
+table.report.itc thead tr:nth-child(2) th:nth-child(3), table.report.itc thead tr:nth-child(2) th:nth-child(4) { background-color: #DC3912; }
+table.report.itc thead tr:nth-child(2) th:nth-child(5), table.report.itc thead tr:nth-child(2) th:nth-child(6) { background-color: #FF9900; }
 table.report.itc thead tr:nth-child(2) th:nth-child(7), table.report.itc thead tr:nth-child(2) th:nth-child(8) { background-color: #109618; }
 table.report.itc thead tr:nth-child(2) th:nth-child(9), table.report.itc thead tr:nth-child(2) th:nth-child(10) { background-color: #990099; }
-table.report.itc tbody td:nth-child(1), table.report.itc tbody td:nth-child(2) { border-color: #3366cc; }
-table.report.itc tbody td:nth-child(3), table.report.itc tbody td:nth-child(4) { border-color: #dc3912; }
-table.report.itc tbody td:nth-child(5), table.report.itc tbody td:nth-child(6) { border-color: #ff9900; }
+table.report.itc tbody td:nth-child(1), table.report.itc tbody td:nth-child(2) { border-color: #3366CC; }
+table.report.itc tbody td:nth-child(3), table.report.itc tbody td:nth-child(4) { border-color: #DC3912; }
+table.report.itc tbody td:nth-child(5), table.report.itc tbody td:nth-child(6) { border-color: #FF9900; }
 table.report.itc tbody td:nth-child(7), table.report.itc tbody td:nth-child(8) { border-color: #109618; }
 table.report.itc tbody td:nth-child(9), table.report.itc tbody td:nth-child(10) { border-color: #990099; }
-table.report.itc tbody tr:nth-child(even) td:nth-child(1), table.report.itc tbody tr:nth-child(even) td:nth-child(2) { background-color: #c1d0ef; }
-table.report.itc tbody tr:nth-child(even) td:nth-child(3), table.report.itc tbody tr:nth-child(even) td:nth-child(4) { background-color: #f4c3b7; }
-table.report.itc tbody tr:nth-child(even) td:nth-child(5), table.report.itc tbody tr:nth-child(even) td:nth-child(6) { background-color: #fee0b2; }
-table.report.itc tbody tr:nth-child(even) td:nth-child(7), table.report.itc tbody tr:nth-child(even) td:nth-child(8) { background-color: #b6dfb9; }
-table.report.itc tbody tr:nth-child(even) td:nth-child(9), table.report.itc tbody tr:nth-child(even) td:nth-child(10) { background-color: #e0b2e0; }
-table.report.play thead tr:nth-child(2) th:nth-child(1), table.report.play thead tr:nth-child(2) th:nth-child(2), table.report.play thead tr:nth-child(2) th:nth-child(3) { background-color: #3366cc; }
-table.report.play thead tr:nth-child(2) th:nth-child(4), table.report.play thead tr:nth-child(2) th:nth-child(5), table.report.play thead tr:nth-child(2) th:nth-child(6) { background-color: #dc3912; }
-table.report.play thead tr:nth-child(2) th:nth-child(7), table.report.play thead tr:nth-child(2) th:nth-child(8), table.report.play thead tr:nth-child(2) th:nth-child(9) { background-color: #ff9900; }
+table.report.itc tbody tr:nth-child(even) td:nth-child(1), table.report.itc tbody tr:nth-child(even) td:nth-child(2) { background-color: #C1D0EF; }
+table.report.itc tbody tr:nth-child(even) td:nth-child(3), table.report.itc tbody tr:nth-child(even) td:nth-child(4) { background-color: #F4C3B7; }
+table.report.itc tbody tr:nth-child(even) td:nth-child(5), table.report.itc tbody tr:nth-child(even) td:nth-child(6) { background-color: #FEE0B2; }
+table.report.itc tbody tr:nth-child(even) td:nth-child(7), table.report.itc tbody tr:nth-child(even) td:nth-child(8) { background-color: #B6DFB9; }
+table.report.itc tbody tr:nth-child(even) td:nth-child(9), table.report.itc tbody tr:nth-child(even) td:nth-child(10) { background-color: #E0B2E0; }
+table.report.play thead tr:nth-child(2) th:nth-child(1), table.report.play thead tr:nth-child(2) th:nth-child(2), table.report.play thead tr:nth-child(2) th:nth-child(3) { background-color: #3366CC; }
+table.report.play thead tr:nth-child(2) th:nth-child(4), table.report.play thead tr:nth-child(2) th:nth-child(5), table.report.play thead tr:nth-child(2) th:nth-child(6) { background-color: #DC3912; }
+table.report.play thead tr:nth-child(2) th:nth-child(7), table.report.play thead tr:nth-child(2) th:nth-child(8), table.report.play thead tr:nth-child(2) th:nth-child(9) { background-color: #FF9900; }
 table.report.play thead tr:nth-child(2) th:nth-child(10), table.report.play thead tr:nth-child(2) th:nth-child(11), table.report.play thead tr:nth-child(2) th:nth-child(12) { background-color: #109618; }
 table.report.play thead tr:nth-child(2) th:nth-child(13), table.report.play thead tr:nth-child(2) th:nth-child(10), table.report.play thead tr:nth-child(2) th:nth-child(16) { background-color: #990099; }
-table.report.play tbody td:nth-child(1), table.report.play tbody td:nth-child(2), table.report.play tbody td:nth-child(3) { border-color: #3366cc; }
-table.report.play tbody td:nth-child(4), table.report.play tbody td:nth-child(5), table.report.play tbody td:nth-child(6) { border-color: #dc3912; }
-table.report.play tbody td:nth-child(7), table.report.play tbody td:nth-child(8), table.report.play tbody td:nth-child(9) { border-color: #ff9900; }
+table.report.play tbody td:nth-child(1), table.report.play tbody td:nth-child(2), table.report.play tbody td:nth-child(3) { border-color: #3366CC; }
+table.report.play tbody td:nth-child(4), table.report.play tbody td:nth-child(5), table.report.play tbody td:nth-child(6) { border-color: #DC3912; }
+table.report.play tbody td:nth-child(7), table.report.play tbody td:nth-child(8), table.report.play tbody td:nth-child(9) { border-color: #FF9900; }
 table.report.play tbody td:nth-child(10), table.report.play tbody td:nth-child(11), table.report.play tbody td:nth-child(12) { border-color: #109618; }
 table.report.play tbody td:nth-child(13), table.report.play tbody td:nth-child(14), table.report.play tbody td:nth-child(15) { border-color: #990099; }
-table.report.play tbody tr:nth-child(even) td:nth-child(1), table.report.play tbody tr:nth-child(even) td:nth-child(2), table.report.play tbody tr:nth-child(even) td:nth-child(3) { background-color: #c1d0ef; }
-table.report.play tbody tr:nth-child(even) td:nth-child(4), table.report.play tbody tr:nth-child(even) td:nth-child(5), table.report.play tbody tr:nth-child(even) td:nth-child(6) { background-color: #f4c3b7; }
-table.report.play tbody tr:nth-child(even) td:nth-child(7), table.report.play tbody tr:nth-child(even) td:nth-child(8), table.report.play tbody tr:nth-child(even) td:nth-child(9) { background-color: #fee0b2; }
-table.report.play tbody tr:nth-child(even) td:nth-child(10), table.report.play tbody tr:nth-child(even) td:nth-child(11), table.report.play tbody tr:nth-child(even) td:nth-child(12) { background-color: #b6dfb9; }
-table.report.play tbody tr:nth-child(even) td:nth-child(13), table.report.play tbody tr:nth-child(even) td:nth-child(14), table.report.play tbody tr:nth-child(even) td:nth-child(15) { background-color: #e0b2e0; }
+table.report.play tbody tr:nth-child(even) td:nth-child(1), table.report.play tbody tr:nth-child(even) td:nth-child(2), table.report.play tbody tr:nth-child(even) td:nth-child(3) { background-color: #C1D0EF; }
+table.report.play tbody tr:nth-child(even) td:nth-child(4), table.report.play tbody tr:nth-child(even) td:nth-child(5), table.report.play tbody tr:nth-child(even) td:nth-child(6) { background-color: #F4C3B7; }
+table.report.play tbody tr:nth-child(even) td:nth-child(7), table.report.play tbody tr:nth-child(even) td:nth-child(8), table.report.play tbody tr:nth-child(even) td:nth-child(9) { background-color: #FEE0B2; }
+table.report.play tbody tr:nth-child(even) td:nth-child(10), table.report.play tbody tr:nth-child(even) td:nth-child(11), table.report.play tbody tr:nth-child(even) td:nth-child(12) { background-color: #B6DFB9; }
+table.report.play tbody tr:nth-child(even) td:nth-child(13), table.report.play tbody tr:nth-child(even) td:nth-child(14), table.report.play tbody tr:nth-child(even) td:nth-child(15) { background-color: #E0B2E0; }
+
+/*# sourceMappingURL=styles.css.map */

@@ -36,7 +36,7 @@ if (($file = fopen($argv[1], 'r')) !== false) {
 	fclose($file);
 }
 
-$mysql = new mysqli('127.0.0.1', 'www', 'www', 'play', 3308);
+$mysql = new mysqli('127.0.0.1', 'www', 'www', 'play', 3300);
 
 if ($mysql->connect_errno)
 	die("MySQL Error #$mysql->connect_errno: $mysql->connect_error\n");

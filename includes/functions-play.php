@@ -32,6 +32,38 @@ function read_report($path, $name = '') {
 	}
 }
 
+function read_country_report($path) {
+	$data = array();
+
+	// Read in .csv file
+	if (($file = fopen($path, 'r')) !== false) {
+		if (($line = fgets($file)) !== false) {
+			$line = preg_replace('/[^A-Za-z0-9\s,._-]/i', '', $line);
+			$keys = str_getcsv($line);
+
+			array_walk($keys, function(&$value, $index) {
+				$value = strtolower(str_replace(' ', '_', $value));
+			});
+
+			while (($line = fgets($file)) !== false) {
+				$line = preg_replace('/[^A-Za-z0-9\s,._-]/i', '', $line);
+
+				if (!empty($line)) {
+					$values = str_getcsv($line);
+					$record = array_combine($keys, $values);
+					$record['date'] = date('Y-m-d', strtotime($record['date']));
+
+					$data[$record['package_name']][] = $record;
+				}
+			}
+		}
+
+		fclose($file);
+	}
+
+	return $data;
+}
+
 function import_report($report) {
 	global $mysql;
 
@@ -76,6 +108,102 @@ function import_report($report) {
 		$stmt->execute();
 		$stmt->close();
 	}
+}
+
+function import_country_report($report) {
+	global $mysql;
+
+	$app_id = 0;
+
+	$date    = '';
+	$country = '';
+
+	$daily_device_installs   = 0;
+	$daily_device_upgrades   = 0;
+	$daily_device_uninstalls = 0;
+	$daily_user_installs     = 0;
+	$daily_user_uninstalls   = 0;
+
+	$sql_insert = 'REPLACE INTO country_installs (
+		`app_id`,
+		`date`,
+		`country`,
+		`daily_device_installs`,
+		`daily_device_upgrades`,
+		`daily_device_uninstalls`,
+		`daily_user_installs`,
+		`daily_user_uninstalls`
+	) VALUES (?, ?, ?, ?, ?, ?, ?, ?)';
+
+	if ($stmt_insert = $mysql->prepare($sql_insert)) {
+		$bind = $stmt_insert->bind_param(
+			'dssddddd', $app_id, $date, $country,
+			$daily_device_installs,
+			$daily_device_upgrades,
+			$daily_device_uninstalls,
+			$daily_user_installs,
+			$daily_user_uninstalls
+		);
+
+		if (!$bind)
+			die("MySQL Error #$stmt->errno: $stmt->error\n");
+	} else {
+		die("MySQL Error #$mysql->errno: $mysql->error\n");
+	}
+
+	foreach ($report as $package => $package_data) {
+		// Locate package
+		if ($stmt = $mysql->prepare('SELECT * FROM `apps` WHERE `package` = ?')) {
+			if ($stmt->bind_param('s', $package) && $stmt->execute() && $result = $stmt->get_result()) {
+				if ($record = $result->fetch_object()) {
+					$app_id = intval($record->id);
+				} else {
+					continue;
+				}
+
+				$result->close();
+			} else {
+				die("MySQL Error #$stmt->errno: $stmt->error\n");
+			}
+
+			$stmt->close();
+		} else {
+			die("MySQL Error #$mysql->errno: $mysql->error\n");
+		}
+
+		// Import data for package
+		foreach ($package_data as $record) {
+			if ('unknown' == $record['country'])
+				$record['country'] = '';
+
+			$date    = $record['date'];
+			$country = $record['country'];
+
+			$daily_device_installs   = intval($record['daily_device_installs']);
+			$daily_device_upgrades   = intval($record['daily_device_upgrades']);
+			$daily_device_uninstalls = intval($record['daily_device_uninstalls']);
+			$daily_user_installs     = intval($record['daily_user_installs']);
+			$daily_user_uninstalls   = intval($record['daily_user_uninstalls']);
+
+			$record_data = compact(
+				'app_id',
+				'date',
+				'country',
+				'daily_device_installs',
+				'daily_device_upgrades',
+				'daily_device_uninstalls',
+				'daily_user_installs',
+				'daily_user_uninstalls'
+			);
+
+			if (!$stmt_insert->execute())
+				error_log("MySQL Error #$stmt_insert->errno: $stmt_insert->error");
+		}
+	}
+
+	$stmt_insert->close();
+
+	$mysql->close();
 }
 
 function get_app($package) {

@@ -4,7 +4,12 @@ global $page, $year, $month;
 
 $report = get_country_report($page, $year, $month);
 
-?><table class="report <?php echo SOURCE; ?>">
+?><form method="POST" enctype="multipart/form-data" id="country-form">
+	<label for="country-report">Country Report</label>
+	<input type="file" name="country_report" id="country-report">
+	<input type="submit" value="Go">
+</form>
+<table class="report <?php echo SOURCE; ?>">
 	<thead>
 		<tr>
 			<th>Country</th>

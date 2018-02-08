@@ -5,4 +5,5 @@ installs_*
 itc/*
 reports/*
 
-scss/.sass-cache/*
+.sass-cache
+styles.css.map

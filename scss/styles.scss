@@ -105,5 +105,27 @@ aside#sidebar {
 	h3 { padding: $text_radius; }
 }
 
+form#country-form {
+	margin: -12px 0 12px;
+	padding: 12px;
+	background-color: $blue;
+
+	label {
+		font-weight: bold;
+		color: $white;
+	}
+
+	input[type="text"], input[type="file"], textarea {
+		background-color: $white;
+		color: $black;
+		font-size: 14px;
+		line-height: $line_height;
+	}
+
+	input[type="button"], input[type="submit"] {
+		@include button;
+	}
+}
+
 @import '_nav';
 @import '_report';
